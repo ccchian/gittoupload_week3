@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset */
+    body, h1, ul, li {
+        margin: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style: none; 
+        padding-left: 0; 
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* NavBar */
+    h1 {
+        float: left;
+    }
+
+    /* 隱藏 checkbox */
+    input {
+        display: none;
+    }
+
+    /* 漢堡按鈕 */
+    label {
+        float: right;
+        line-height: 50px;
+        cursor: pointer;
+    }
+
+    labeL img {
+        width: 30px;   
+        vertical-align: middle;
+    }
+  
+
+    /* menu*/    
+    /* 清除float效果 */
+    .menu {
+        clear: both; 
+        background: #fff;
+    }
+
+    li {
+        text-align: center;
+        border-bottom: 1px solid #efefef;
+        margin:0px 10px;
+    }
+
+    .menu li a {
+        display: block;
+        line-height: 50px;
+        font-size: 20px;
+        color: #5d5d5d;
+    }    
+    .menu li:hover {
+        background: #5d5d5d;
+        color: #fff;
+    }
+
+    .menu {
+        max-height: 0;
+        overflow: hidden; /*自動隱藏超出的文字或圖片*/
+        transition: .2s; /* 動畫秒數 */
+    }
+
+    input:checked ~ .menu {
+        max-height: 300px;
+    }
+   
+
+    /* mediaquery */
+    @media screen and (min-width: 1200px) {
+        label {
+            display: none;
+        }
+        .menu {
+            float: right;
+            clear: none;
+            max-height: 50px;
+            background: white;
+            
+        }
+        li {
+        display: inline-block;
+        list-style-type:none;
+        
+        }
+    }
+  
+    main>.top1{
+        flex:none;
+        width:600px;
+        margin:10px;
+        background-color: #ddedf8;
+    }
+    main>.others{
+        flex:none;
+        width:300px;
+        margin:10px;
+        background-color: #ddedf8;
+    }
+
+    /* mm */
+    .content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        
+    }
+    .d-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+    }
+    .content-header {
+        padding: 10px  5px;
+    }
+  
+    .col-3 {
+        width: 25%;
+    }
+    .col-6 {
+        width: 49.5%;
+    }
+    .others {
+        padding: 5px;
+    }
+
+    .item-img {
+        width: 100%;
+        height: 100%;
+    }
+    .text-size{
+        font-size: 40px;
+    }
+    @media (max-width:1200px) {
+        .content {
+             width:90%;
+        }
+        .col-md-6 {
+            width: 50%;
+        }
+        .text-size{
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width:600px) {
+        .col-sm-12 {
+            width: 100%;
+        }
+        .content-header {
+            padding: 10px 0 0;
+        }
+        .top1 {
+            margin: 5px auto;
+        }
+        .text-size{
+            font-size: 30px;
+        }
+    }
+ 
+    </style>
+</head>
+<body>
+    <nav style="height:50px;">
+        <h1 style="line-height: 50px;font-size: 20px;">My Website</h1>
+        <label for="switch"><img src="https://static.thenounproject.com/png/547171-200.png"></label>
+        <input type="checkbox" id="switch">
+        <ul class="menu">
+          <li><a href="##">Item1</a></li>
+          <li><a href="##">Item2</a></li>
+          <li><a href="##">Item3</a></li>
+          <li><a href="##">Item4</a></li>
+        </ul>
+    </nav>
+
+    <div class="text-size" style="height:300px;background-color: #ddedf8;text-align: center;line-height: 300px;">
+        Welcome to Myhome
+    </div>
+    <main>
+        <div class="content" id="content">
+            <div class="content-header d-flex" id="content-header">
+                <!-- <div class="item top1 col-6 col-sm-12" style="height:50px;font-size: 20px;line-height: 50px;background-color: #ddedf8;display: flex;align-items: center;"><img class="toppic" src="https://is.gd/xRsGLX" alt="" style="width: 80px;height: 50px;"><span>Promotion 1</span></div>
+                <div class="item top1 col-6 col-sm-12" style="height:50px;font-size: 20px;line-height: 50px; background-color: #ddedf8;display: flex;align-items: center;">
+                    <img class="toppic" src="https://is.gd/xRsGLX" alt="" style="width: 80px;height: 50px;">Promotion 2-->
+                </div> 
+            </div>      
+
+            <div class="content-inner d-flex" id="content-inner">
+                <!-- <div class="others col-3 col-md-6 col-sm-12" >
+                    <div style="display: flex;">
+                        <img class="box item-img" src="https://is.gd/xRsGLX"alt="">
+                    </div>
+                    <div style="text-align: center;background-color: #ddedf8;font-size: 20px;line-height: 29px;" >Title1</div>
+                </div>
+                <div class="others col-3 col-md-6 col-sm-12" >
+                    <div style="display: flex;"><img class="box item-img" src="https://is.gd/xRsGLX"alt=""></div>
+                    <div style="text-align: center;background-color: #ddedf8;font-size: 20px;line-height: 29px;" >Title2</div>
+                </div>
+                <div class="others col-3 col-md-6 col-sm-12" >
+                    <div style="display: flex;"><img class="box item-img" src="https://is.gd/xRsGLX"alt=""></div>
+                    <div style="text-align: center;background-color: #ddedf8;font-size: 20px;line-height: 29px;" >Title3</div>
+                </div>
+                <div class="others col-3 col-md-6 col-sm-12" >
+                    <div style="display: flex;"><img class="box item-img"src="https://is.gd/xRsGLX"alt=""></div>
+                    <div style="text-align: center;background-color: #ddedf8;font-size: 20px;line-height: 29px;" >Title4</div>
+                </div>
+                <div class="others col-3 col-md-6 col-sm-12" >
+                    <div style="display: flex;"><img class="box item-img" src="https://is.gd/xRsGLX"alt=""></div>
+                    <div style="text-align: center;background-color: #ddedf8;font-size: 20px;line-height: 29px;" >Title5</div>
+                </div>
+                <div class="others col-3 col-md-6 col-sm-12" >
+                    <div style="display: flex;"><img class="box item-img" src="https://is.gd/xRsGLX"alt=""></div>
+                    <div style="text-align: center;background-color: #ddedf8;font-size: 20px;line-height: 29px;" >Title6</div>
+                </div>
+                <div class="others col-3 col-md-6 col-sm-12" >
+                    <div style="display: flex;"><img class="box item-img" src="https://is.gd/xRsGLX"alt=""></div>
+                    <div style="text-align: center;background-color: #ddedf8;font-size: 20px;line-height: 29px;" >Title7</div>
+                </div>
+                <div class="others col-3 col-md-6 col-sm-12" >
+                    <div style="display: flex;"><img class="box item-img" src="https://is.gd/xRsGLX"alt=""></div>
+                    <div style="text-align: center;background-color: #ddedf8;font-size: 20px;line-height: 29px;" >Title8</div>
+                </div>-->
+            </div> 
+            <button id="read-more" type="button" style="display: none; margin: auto;" onclick="createInner(true)">read more</button>
+        </div> 
+    </main>
+    <script>
+        window.onload = function(){
+            getData();
+        };
+
+        var count = 0;
+        var resData;
+        function getData() {
+            var dataUrl= "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json"
+            var xhr = new XMLHttpRequest()
+            xhr.open('GET',dataUrl, true)
+            xhr.send()
+            xhr.onreadystatechange = function(){
+                if(this.readyState === 4 && this.status === 200){
+                    resData = JSON.parse(this.responseText).result.results;
+                    console.log(resData);
+                    createHeader(resData);
+                    createInner(false);
+                }
+            }
+        }
+
+        function createHeader(data) {
+            /// 取得外層容器 content-header (前2個景點)
+            var contentHeader = document.getElementById("content-header");
+
+            // 建立一個 DocumentFragment，可以把它看作一個「虛擬的容器」
+            var fragment = document.createDocumentFragment();
+            
+            for (var i = 0; i < 2; i++){
+                // 生成新的 div，加入文字後置入 fragment 中。     
+                var itemDiv = document.createElement("div");
+                itemDiv.setAttribute('class', 'item top1 col-6 col-sm-12');
+                itemDiv.setAttribute('style', 'height:50px;font-size: 20px;line-height: 50px; background-color: #ddedf8;display: flex;align-items: center;');
+                var imgUrl = data[i].file.split('https://')[1];
+                console.log('imgUrl',imgUrl);
+                var img = document.createElement("img");
+                img.setAttribute('class', 'toppic');
+                img.setAttribute('src', `https://${imgUrl}`);
+                img.setAttribute('style', 'width: 80px;height: 50px;');
+
+                itemDiv.appendChild(img);
+                itemDiv.appendChild(document.createTextNode(data[i].stitle));
+                fragment.appendChild(itemDiv);
+            }
+
+            // 最後將組合完成的 fragment 放進 itemDiv 容器
+            contentHeader.appendChild(fragment); 
+            document.getElementById('read-more').style.display = 'block';
+        }
+        var index = 2 
+        var maxNum = 10;
+        var getListNum = 8;
+        function createInner(isClick) {
+            if(isClick) {
+                count++;
+                index = index + getListNum;
+                maxNum = maxNum + getListNum;
+                if(resData.length <= maxNum) {
+                    document.getElementById('read-more').style.display = 'none';
+                }
+            }
+            
+            console.log('count', count);
+            console.log('index', index);
+            console.log('maxNum', maxNum);
+            /// 取得外層容器 content-inner (後8個景點)
+            var contentInner = document.getElementById("content-inner");
+            var fragmentInner = document.createDocumentFragment();
+            if (resData.length >= maxNum) {
+                for (var i = index; i < maxNum; i++){  
+                    if (resData[i]) {
+                        var itemDivInner = document.createElement("div");
+                        itemDivInner.setAttribute('class', 'others col-3 col-md-6 col-sm-12');
+
+                        var itemDivInner2 = document.createElement("div");
+                        itemDivInner2.setAttribute('style', 'display: flex;');
+
+                        var imgUrl2 = resData[i].file.split('https://')[1];
+                        var imgInner = document.createElement("img");
+                        imgInner.setAttribute('class', 'box item-img');
+                        imgInner.setAttribute('src', `https://${imgUrl2}`);
+
+                        var itemDivTitle = document.createElement("div");
+                        itemDivTitle.setAttribute('style', 'text-align: center;background-color: #ddedf8;font-size: 20px;line-height: 29px;');
+                        
+                        itemDivInner.appendChild(itemDivInner2);
+                        itemDivInner2.appendChild(imgInner);
+                        itemDivInner.appendChild(itemDivTitle);
+                        itemDivTitle.appendChild(document.createTextNode(resData[i].stitle));
+                        fragmentInner.appendChild(itemDivInner);
+                    }
+                }
+                contentInner.appendChild(fragmentInner);
+            }
+        }
+    </script>
+</body>
+</html>
